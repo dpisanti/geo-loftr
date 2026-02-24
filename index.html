@@ -263,8 +263,8 @@
                 Roland Brockers<sup>2</sup>,
               </span>
               <span class="author-block">
-                <!--<a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Georgios Georgakis</a><sup>2</sup>-->
-                Georgios Georgakis<sup>2</sup>,
+                <!--<a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Georgios Georgakis</a><sup>2</sup>, -->
+                Georgios Georgakis<sup>2</sup>
               </span>
             </div>
 
@@ -342,7 +342,7 @@
 
                 <div class="arxiv-image has-text-centered" style="font-family: 'Google Sans', sans-serif;">
                   <!-- <img src="figures/egomde_system_overview.png " alt="Related image" style="max-width: 1400px;"> -->
-                  <img src="static/images/concept_large_corr.png " alt="Learning from model weights" class="blend-img-background center-image" style="width: 100%; height: auto;" loading="lazy">
+                  <img src="static/images/Geo-LoFTR_architecture.png " alt="Learning from model weights" class="blend-img-background center-image" style="width: 100%; height: auto;" loading="lazy">
 
                   <p style="text-align: center; font-family: 'Castoro', serif; font-size: 18px;">
                   We present <span style="color:#e65c00; font-weight:700;">Geo</span><span style="color:#c2b7bf; font-weight:700;">-</span><span style="color:#40a813; font-weight:700;">LoFTR</span>, a geometry-enhanced deep image matcher for robust map-based localization of future Mars rotorcraft under severe illumination variations. By incorporating digital terrain models alongside visual appearance, Geo-LoFTR improves image registration between onboard navigation images and orbital maps, providing higher localization accuracy over prior methods.
@@ -400,6 +400,33 @@ In this work, we investigate a new MbL system and propose Geo-LoFTR, a geometry-
 </section>
 <!-- End paper abstract -->
 
+<!-- Geo-LoFTR section -->
+<section class="section">
+<div class="container">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width has-text-centered">
+    <!-- <div class="column is-four-fifths"> -->
+      <h2 class="title is-3">Matching under harsh lighting</h2>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+       
+        <p>
+      Geo-LoFTR extends LoFTR by incorporating geometric context derived from digital terrain models alongside visual appearance cues. 
+      This geometry-aware formulation improves correspondence robustness under large illumination and scale variations between onboard imagery and the reference orbital maps. 
+          </p>
+        </div>
+          <div class="content has-text-centered">
+              <img src="static/images/matches_examples.png" width="100%" alt="overview">
+          </div>
+           <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+          <p>
+          <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
+          <b>Robust matching under illumination changes.</b> The figure above compares Geo-LoFTR against SuperPoint+SuperGlue and SuperPoint+LightGlue (both pre-trained on MegaDepth), as well as SIFT, on a representative query image (left in each panel; AZ=0°, EL=10°) matched to map search-area images (right) rendered with three different sun azimuths and 0° elevation offset. Match lines are color-coded by confidence (red = higher).
+          </p>
+         </div>
+  </div>
+  </div>
+</div>   
+<!-- End of Geo-LoFTR section -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
