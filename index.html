@@ -546,6 +546,39 @@ In this work, we investigate a new MbL system and propose Geo-LoFTR, a geometry-
   </div>
 </div>
 
+<!-- Validation on Mars2020 Descent Imagery  -->
+<section class="section">
+<div class="container">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width has-text-centered">
+    <!-- <div class="column is-four-fifths"> -->
+      <h2 class="title is-4">Validation on Mars2020 Descent Imagery</h2>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+        <p>
+        In the absence of representative aerial imagery from Mars, we validate our approach using real LCAM images captured during the Mars 2020 Entry, Descent, and Landing (EDL) phase. Descent frames acquired between approximately 6 km and 960 m altitude are registered to a CTX orbital reference map (6 m/px resolution), producing scale differences comparable to those expected in future rotorcraft missions.
+        </p>
+      </div>
+
+      <video autoplay controls muted loop width="50%" preload="metadata">
+        <source src="static/videos/EDL_matching.mp4" type="video/mp4">
+      </video>
+      
+      <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
+      <b>Real Mars 2020 descent imagery registration.</b> Samples from the LCAM imaging sequence during the Mars 2020 EDL phase, overlaid with Geo-LoFTR correspondences. Inlier matches (green) are retained by the RANSAC-PnP solution with reprojection errors below 1 pixel, while rejected matches are shown in red.
+      </p>
+
+      <div class="content has-text-centered">
+          <img src="static/images/EDL_trajectories_w_legend_size_500_w_zoom_crop.png" width="40%" alt="overview">
+      </div>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+        <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
+        <b>Reconstructed Mars 2020 descent trajectory.</b> Localization results between 6 km and 960 m altitude over a 9 km² CTX map crop of Jezero crater, comparing Geo-LoFTR, Pre-LoFTR, and SIFT. Ground truth (GT) EDL trajectory is shown for reference.
+        </p>
+     </div> 
+    </div>
+  </div>
+</div>
+
   
 <!-- MbL Evaluation -->
 
