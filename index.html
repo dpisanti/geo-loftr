@@ -457,13 +457,16 @@ In this work, we investigate a new MbL system and propose Geo-LoFTR, a geometry-
 </div>   
 <!-- MbL section -->
 
-<!-- Evaluation on a simulated Martian day -->
+<!-- Evaluation  -->
 <section class="section">
 <div class="container">
   <div class="columns is-centered has-text-centered">
     <div class="column is-full-width has-text-centered">
     <!-- <div class="column is-four-fifths"> -->
-      <h2 class="title is-3">Evaluation on a simulated Martian day</h2>
+      <h2 class="title is-3">MbL Evaluation</h2>
+      <hr>
+      <!-- Martian day  -->
+      <h2 class="title is-4">Localization over a simulated Martian day</h2>
       <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
         <p>
        To evaluate localization robustness under realistic illumination changes, we simulated a full Martian day over the Jezero crater site, using HiRISE orbital maps (0.25 mpx) and Digital Terrain Models (1 m post spacing). Sun position was varied according to Mars ephemerides on 2031-05-10, and nadir-pointing query images were generated from 5:30 to 17:00 Local Mean Solar Time (LMST) across altitudes ranging from 64 to 200 meters. A fixed orthographic map rendered at 15:00 LMST served as HiRISE-like reference.
@@ -471,29 +474,70 @@ In this work, we investigate a new MbL system and propose Geo-LoFTR, a geometry-
       </p>
       </div>
       
-          <div class="content has-text-centered">
-              <img src="static/images/queries_LSMTs.png" width="10%" alt="overview">
-          </div>
-          <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
-            <p>
-            <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
-            <b>Illumination variation across a simulated Martian day.</b> Sample query observations rendered at different Local Mean Solar Times (LMST) on 2031-05-10 over Jezero crater. The orthographic HiRISE-like reference map is rendered at 15:00 LMST, while the Sun reaches zenith at 11:29 LMST. Significant changes in shadowing and contrast occur throughout the day.
-            </p>
-         </div>
+      <div class="content has-text-centered">
+          <img src="static/images/queries_LSMTs.png" width="40%" alt="overview">
+      </div>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+        <p>
+        <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
+        <b>Illumination variation across a simulated Martian day.</b> Sample query observations rendered at different Local Mean Solar Times (LMST) on 2031-05-10 over Jezero crater. The orthographic HiRISE-like reference map is rendered at 15:00 LMST, while the Sun reaches zenith at 11:29 LMST. Significant changes in shadowing and contrast occur throughout the day.
+        </p>
+     </div>
 
-          <div class="content has-text-centered">
-              <img src="static/images/1m-acc_loc_vs_LMST_vs_alt_zoom.png" width="100%" alt="overview">
-          </div>
-          <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
-            <p>
-            <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
-            <b>Localization accuracy across a simulated Martian day.</b> @1m localization accuracy as a function of Local Mean Solar Time (LMST) for simulated test observations over Jezero crater on 2031-05-10, across the 64–200 m altitude range. The reference HiRISE-like map is rendered at 15:00 LMST (dashed line), while the Sun reaches zenith at 11:29 LMST.
-            </p>
-         </div> 
+      <div class="content has-text-centered">
+          <img src="static/images/1m-acc_loc_vs_LMST_vs_alt_zoom.png" width="40%" alt="overview">
+      </div>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+        <p>
+        <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
+        <b>Localization accuracy across a simulated Martian day.</b> @1m localization accuracy as a function of Local Mean Solar Time (LMST) for simulated test observations over Jezero crater on 2031-05-10, across the 64–200 m altitude range. The reference HiRISE-like map is rendered at 15:00 LMST (dashed line), while the Sun reaches zenith at 11:29 LMST.
+        </p>
+     </div> 
     </div>
   </div>
-</div>   
-<!-- Evaluation on a simulated Martian day -->
+</div>
+
+<!-- Robustness to solar angles  -->
+<section class="section">
+<div class="container">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width has-text-centered">
+    <!-- <div class="column is-four-fifths"> -->
+      <h2 class="title is-4">Robustness to changing solar angles</h2>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+        <p>
+        We further evaluate robustness to variations in Sun elevation and azimuth by registering query observations onto orthographic maps rendered under different lighting configurations. These experiments isolate the effects of solar geometry while keeping terrain and viewpoint fixed.
+        </p>
+        
+        <p>
+        Across a wide range of elevation offsets — including extreme low-elevation cases not seen during training — Geo-LoFTR consistently outperforms SuperPoint+SuperGlue, SuperPoint+LightGlue, and SIFT. While all methods degrade under very low Sun elevations due to severe shadowing, Geo-LoFTR remains the most accurate, indicating that incorporating depth information mitigates ambiguities in purely appearance-based matching.
+        </p>
+        
+        <p>
+        Similarly, under varying Sun azimuth angles, Geo-LoFTR maintains stable localization performance across the full 360° range. In contrast to purely visual approaches, the geometry-enhanced formulation demonstrates improved robustness to both lighting shifts and altitude-induced scale variations.
+        </p>
+      </p>
+      </div>
+      
+      <div class="content has-text-centered">
+          <img src="static/images/1m-acc_loc_vs_el_vs_alt_new3.png" width="40%" alt="overview">
+      </div>
+
+      <div class="content has-text-centered">
+          <img src="static/images/1m-acc_loc_vs_az_vs_alt_new3.png" width="40%" alt="overview">
+      </div>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+        <p>
+        <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
+        <b>Localization accuracy under varying solar geometry.</b> @1m accuracy as a function of map Sun elevation (top) and azimuth (bottom) for simulated observations across three altitude ranges (64–200 m). Sun azimuth spans the full [−180°, 180°] range. The dashed line indicates lighting conditions matching the query observations.
+        </p>
+     </div> 
+    </div>
+  </div>
+</div>
+
+  
+<!-- MbL Evaluation -->
 
 
 
