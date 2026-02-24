@@ -428,6 +428,35 @@ In this work, we investigate a new MbL system and propose Geo-LoFTR, a geometry-
 </div>   
 <!-- End of Geo-LoFTR section -->
 
+
+<!-- MbL section -->
+<section class="section">
+<div class="container">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width has-text-centered">
+    <!-- <div class="column is-four-fifths"> -->
+      <h2 class="title is-3">Integration within the Map-Based Localization pipeline</h2>
+      <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+       
+        <p>
+      Geo-LoFTR extends LoFTR by incorporating geometric context derived from digital terrain models alongside visual appearance cues. 
+      This geometry-aware formulation improves correspondence robustness under large illumination and scale variations between onboard imagery and the reference orbital maps. 
+          </p>
+        </div>
+          <div class="content has-text-centered">
+              <img src="static/images/concept_large_corr.png" width="100%" alt="overview">
+          </div>
+           <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
+          <p>
+          <p style="text-align:center; font-family:'Castoro', serif; font-size:16px; max-width:900px; margin:12px auto;">
+          <b>Map-Based Localization pipeline.</b> Given geo-referenced orthographic grayscale and depth maps and an onboard navigation image from a Mars rotorcraft, the goal is to estimate the vehicle pose in the global frame. A noisy pose prior defines a localized search area, which is divided into map and depth windows. Each window is processed together with the query image by Geo-LoFTR to establish correspondences. The filtered matches are then used within a RANSAC-PnP stage to recover the rotorcraft pose.
+          </p>
+         </div>
+  </div>
+  </div>
+</div>   
+<!-- MbL section -->
+
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
