@@ -439,8 +439,8 @@ In this work, we investigate a new MbL system and propose Geo-LoFTR, a geometry-
       <div class="content has-text-justified" style="font-family: 'Google Sans', sans-serif; color: #111;">
        
         <p>
-      Geo-LoFTR extends LoFTR by incorporating geometric context derived from digital terrain models alongside visual appearance cues. 
-      This geometry-aware formulation improves correspondence robustness under large illumination and scale variations between onboard imagery and the reference orbital maps. 
+        Within the Map-Based Localization (MbL) framework, Geo-LoFTR operates on overlapping windows sampled from a map search area defined by a pose prior. For each region, correspondences between the onboard navigation image and yhe geo-referenced orbital map are estimated. These matches are filtered and used in a RANSAC-PnP stage to recover the rotorcraft pose in the global reference frame.
+        </p>
           </p>
         </div>
           <div class="content has-text-centered">
